@@ -23,5 +23,5 @@ class Car:
             self.gasolineCapacity = 0
         
     def report(self):
-        print("Distance Travelled: " + distanceTravelled)
-        print("Remaining Gasoline: " + gasolineCapacity)
+        print(f"Distance Travelled: {self.distanceTravelled}")
+        print(f"Remaining Gasoline: {self.gasolineCapacity}")
