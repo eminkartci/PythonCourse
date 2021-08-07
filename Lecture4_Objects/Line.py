@@ -13,6 +13,10 @@ class Line:
         return ((self.x1-self.x2)**2+(self.y1-self.y2)**2)**(1/2)
 
     def slope(self):
+        if(self.x1 == self.x2):
+            print("The slope is undefined !")
+            return None
+
         return (self.y1-self.y2)/(self.x1-self.x2)
 
     def moveX(self,addX=0,addY=0):
@@ -21,7 +25,7 @@ class Line:
 
 
 line1 = Line()
-line2 = Line(2.7,-0.5,6.25,3)
+line2 = Line(2.7,-0.5,2.7,3)
 
 print("Line 1 Length: ",line1.length())
 print("Line 2 Length: ",line2.length())
