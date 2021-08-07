@@ -18,3 +18,16 @@ class Line:
     def moveX(self,addX=0,addY=0):
         self.x1 += addX
         self.y1 += addY
+
+
+line1 = Line()
+line2 = Line(2.7,-0.5,6.25,3)
+
+print("Line 1 Length: ",line1.length())
+print("Line 2 Length: ",line2.length())
+
+line1.moveX(1,3)
+
+print("Line 1 Length: ",line1.length())
+print("Line 2 Slope: ",line2.slope())
+
