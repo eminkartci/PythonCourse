@@ -1,6 +1,5 @@
 import numpy as np
 
-
 A = np.array([
     [1 ,4 ,6],
     [4 , 63 ,1], 
