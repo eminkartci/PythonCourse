@@ -4,3 +4,4 @@ CityC,1,18
 CityA,2,14
 CityB,2,11
 CityC,2,18
+CityC,19,20
