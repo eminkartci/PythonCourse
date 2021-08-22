@@ -1,0 +1,6 @@
+CityA,1,15
+CityB,1,12
+CityC,1,18
+CityA,2,14
+CityB,2,11
+CityC,2,18
