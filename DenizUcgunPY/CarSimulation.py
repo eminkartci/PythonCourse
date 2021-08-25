@@ -1,9 +1,30 @@
 
+class Car:
+
+    # constructor
+    def __init__(self,name,fuel,consumption,passengers,capacity):
+        self.name = name
+        self.fuel = fuel
+        self.consumption = consumption
+        self.km   = 0.0
+        self.passengers = passengers
+        self.capacity = capacity
+
+
+    # Behavior
+    def print_car(self):
+        print(f'--- Car {self.name} ---\n| km: {self.km}\n| fuel: {self.fuel}\n| Passengers: {self.passengers}')
+
+
+
+
 carName = "Tesla Car"
 carkm = 0.0   # km
 carfuel = 100 # kWh
 consumption = 1.6 # kWh/km
 passengers = ["Emin","Deniz"] # Max 4
+
+
 
 carName2 = "Ferrari"
 carkm2 = 0.0   # km
@@ -11,16 +32,24 @@ carfuel2 = 120  # lt
 consumption2 = 5.6 # lt/km
 passengers2 = ["Durmus","Ezgi"] # Max 3
 
+car1 = Car("Tesla Car",100,1.6,["Emin","Deniz"],4)
+car2 = Car("Ferrari",120,5.6,["Durmus","Ezgi"],3)
+car3 = Car("Mustang GT",220,11,["Umut"],2)
+
+car1.print_car()
+car2.print_car()
+car3.print_car()
+
 
 print(f'--- Car {carName} ---\n| km: {carkm}\n| fuel: {carfuel}\n| Passengers: {passengers}')
 print(f'--- Car {carName2} ---\n| km: {carkm2}\n| fuel: {carfuel2}\n| Passengers: {passengers2}')
 
 ## Move 10 km with Tesla
-if (10 * 1.6 <= carfuel):
+if (10 * consumption <= carfuel):
     carkm += 10
-    carfuel -= 10 * 1.6
+    carfuel -= 10 * consumption
 else:
-    maxKm = carfuel / 1.6
+    maxKm = carfuel / consumption
     carkm += maxKm
     carfuel = 0
     print("There isn't enough fuel! Go to the nearest gas station!")
@@ -32,11 +61,11 @@ else:
     print("There is no space !!")
 
 ## Move further 900 km
-if (900 * 1.6 <= carfuel):
+if (900 * consumption <= carfuel):
     carkm += 900
-    carfuel -= 900 * 1.6
+    carfuel -= 900 * consumption
 else:
-    maxKm = carfuel / 1.6
+    maxKm = carfuel / consumption
     print("Maxkm: ",maxKm)
     carkm += maxKm
     carfuel = 0
@@ -45,11 +74,11 @@ else:
 ##################
 
 ## Move 22 km with
-if (22 * 5.6 <= carfuel2):
+if (22 * consumption2 <= carfuel2):
     carkm2 += 22
-    carfuel2 -= 22 * 5.6
+    carfuel2 -= 22 * consumption2
 else:
-    maxKm = carfuel2 / 5.6
+    maxKm = carfuel2 / consumption2
     print("maxkm: ",maxKm)
     carkm2 += maxKm
     carfuel2 = 0
@@ -57,11 +86,11 @@ else:
 ## Get 26 lt fuel
 carfuel2 += 26
 ## Move 17 km 
-if (22 * 5.6 <= carfuel2):
+if (22 * consumption2 <= carfuel2):
     carkm2 += 17
-    carfuel2 -= 17 * 5.6
+    carfuel2 -= 17 * consumption2
 else:
-    maxKm = carfuel2 / 5.6
+    maxKm = carfuel2 / consumption2
     carkm2 += maxKm
     print("maxkm: ",maxKm)
     carfuel2 = 0
@@ -82,3 +111,6 @@ else:
 
 print(f'--- Car {carName} ---\n| km: {carkm}\n| fuel: {carfuel}\n| Passengers: {passengers}')
 print(f'--- Car {carName2} ---\n| km: {carkm2}\n| fuel: {carfuel2}\n| Passengers: {passengers2}')
+
+
+
