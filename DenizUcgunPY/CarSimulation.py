@@ -16,13 +16,26 @@ print(f'--- Car {carName} ---\n| km: {carkm}\n| fuel: {carfuel}\n| Passengers: {
 print(f'--- Car {carName2} ---\n| km: {carkm2}\n| fuel: {carfuel2}\n| Passengers: {passengers2}')
 
 ## Move 10 km with Tesla
-carkm += 10
-carfuel -= 10 * 1.6
+if (10 * 1.6 <= carfuel):
+    carkm += 10
+    carfuel -= 10 * 1.6
+else:
+    maxKm = carfuel / 1.6
+    carkm += maxKm
+    carfuel = 0
+    print("There isn't enough fuel! Go to the nearest gas station!")
 ## Get a new passanger named "Kagan" there -> Tesla
 passengers.append("Kagan")
 ## Move further 900 km
-carkm += 900
-carfuel -= 900 * 1.6
+if (900 * 1.6 <= carfuel):
+    carkm += 900
+    carfuel -= 900 * 1.6
+else:
+    maxKm = carfuel / 1.6
+    print("Maxkm: ",maxKm)
+    carkm += maxKm
+    carfuel = 0
+    print("There isn't enough fuel! Go to the nearest gas station!")
 
 ##################
 
@@ -30,7 +43,7 @@ carfuel -= 900 * 1.6
 carkm2 += 22
 carfuel2 -= 22 * 5.6
 ## Get 26 lt fuel
-carfuel += 26
+carfuel2 += 26
 ## Move 17 km 
 carkm2 += 17
 carfuel2 -= 17 * 5.6
