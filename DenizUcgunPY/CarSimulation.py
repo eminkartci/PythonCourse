@@ -15,6 +15,18 @@ class Car:
     def print_car(self):
         print(f'--- Car {self.name} ---\n| km: {self.km}\n| fuel: {self.fuel}\n| Passengers: {self.passengers}')
 
+    def move(self,km):
+        if( km <= (self.fuel / self.consumption)):
+            ## move
+            self.km += km
+            self.fuel -= km / self.consumption
+        else:
+            # move as fas as car can
+                # calculate max km
+            maxKm = self.fuel / self.consumption
+            self.km += maxKm
+            self.fuel = 0
+            print(f"Car {self.name} cannot move further. Please go to the nearest gas station!")
 
 
 
@@ -45,14 +57,15 @@ print(f'--- Car {carName} ---\n| km: {carkm}\n| fuel: {carfuel}\n| Passengers: {
 print(f'--- Car {carName2} ---\n| km: {carkm2}\n| fuel: {carfuel2}\n| Passengers: {passengers2}')
 
 ## Move 10 km with Tesla
-if (10 * consumption <= carfuel):
-    carkm += 10
-    carfuel -= 10 * consumption
-else:
-    maxKm = carfuel / consumption
-    carkm += maxKm
-    carfuel = 0
-    print("There isn't enough fuel! Go to the nearest gas station!")
+car1.move(10)
+# if (10 * consumption <= carfuel):
+#     carkm += 10
+#     carfuel -= 10 * consumption
+# else:
+#     maxKm = carfuel / consumption
+#     carkm += maxKm
+#     carfuel = 0
+#     print("There isn't enough fuel! Go to the nearest gas station!")
     
 ## Get a new passanger named "Kagan" there -> Tesla
 if len(passengers) < 3:    
