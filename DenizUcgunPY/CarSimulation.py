@@ -11,6 +11,10 @@ carfuel2 = 120  # lt
 consumption2 = 5.6 # lt/km
 passengers2 = ["Durmus","Ezgi"] # Max 3
 
+
+print(f'--- Car {carName} ---\n| km: {carkm}\n| fuel: {carfuel}\n| Passengers: {passengers}')
+print(f'--- Car {carName2} ---\n| km: {carkm2}\n| fuel: {carfuel2}\n| Passengers: {passengers2}')
+
 ## Move 10 km with Tesla
 carkm += 10
 carfuel -= 10 * 1.6
@@ -35,3 +39,5 @@ passengers2.append("Mehmet")
 passengers2.append("Hatice")
 passengers2.append("Muhammet")
 
+print(f'--- Car {carName} ---\n| km: {carkm}\n| fuel: {carfuel}\n| Passengers: {passengers}')
+print(f'--- Car {carName2} ---\n| km: {carkm2}\n| fuel: {carfuel2}\n| Passengers: {passengers2}')
