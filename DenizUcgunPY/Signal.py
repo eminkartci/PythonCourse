@@ -1,4 +1,4 @@
-
+import math
 
 class Signal:
 
@@ -29,6 +29,8 @@ class Signal:
         "Z" : 24,
     }
 
+    additionList = [12,6,3,1,1]
+
     def __init__(self,information,type,isContinous):
         self.information    = information
         self.type           = type
@@ -37,22 +39,24 @@ class Signal:
     def encode(self):
         pass
 
-    def encondeLetter(self,letter):
+    def encondeLetter(self,letter): # Z
 
-        number = self.letter2number[letter.upper()]
-        bits = []
-        addition = 0
+        number = self.letter2number[letter.upper()]  # 24
+        print(f"Number: {number}")
+        bits = []  # 0 0 0 0 0
+        addition = 0  # 21
 
-        for i in range(5):
+        for i in range(5): # 4
 
             if i > 0:
                 if bits[i-1] == 0:
-                    addition = len(self.letter2number)/2
+                    addition += self.additionList[i-1]
                 else:
-                    addition = 0
+                    addition += 0
 
+            print(f"i: {i} \ addition: {addition}")
 
-            if number <= (addition + (len(self.letter2number)/(2*(i+1)))):
+            if number <= (addition + self.additionList[i]):  #  24 <= 21 + 2
                 bits.append(1)
             else:
                 bits.append(0)
@@ -64,6 +68,6 @@ class Signal:
 # MAIN
 signal1 = Signal("Emin","Bits",False)
 
-signal1.encondeLetter("O")
+signal1.encondeLetter("C")
         
         
