@@ -38,13 +38,24 @@ class Signal:
         pass
 
     def encondeLetter(self,letter):
-        
+
         number = self.letter2number[letter.upper()]
         bits = []
-        if number <= (len(self.letter2number)/2):
-            bits.append(1)
-        else:
-            bits.append(0)
+        addition = 0
+
+        for i in range(5):
+
+            if i > 0:
+                if bits[i-1] == 0:
+                    addition = len(self.letter2number)/2
+                else:
+                    addition = 0
+
+
+            if number <= (addition + (len(self.letter2number)/(2*(i+1)))):
+                bits.append(1)
+            else:
+                bits.append(0)
 
         print(bits)
         
@@ -53,6 +64,6 @@ class Signal:
 # MAIN
 signal1 = Signal("Emin","Bits",False)
 
-signal1.encondeLetter("E")
+signal1.encondeLetter("O")
         
         
