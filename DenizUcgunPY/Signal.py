@@ -1,4 +1,7 @@
 import math
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-whitegrid')
+import numpy as np
 
 class Signal:
 
@@ -42,7 +45,8 @@ class Signal:
         for letter in self.information:
             signal += self.encondeLetter(letter)
 
-        print("Signal: ",signal)
+        # print("Signal: ",signal)
+        return signal
 
         
 
@@ -70,11 +74,22 @@ class Signal:
 
         # print(bits)
         return bits
+
+    def printSignal(self):
+        print(f"Signal: {self.signal}")
+
+    def showSignal(self):
+        x = range(len(self.signal))
+        y = self.signal
+
+        plt.plot(x, y, 'o', color='black')
+        plt.show()
         
 
 
 # MAIN
 signal1 = Signal("Emin","Bits",False)
 
-        
+signal1.printSignal()
+signal1.showSignal()
         
