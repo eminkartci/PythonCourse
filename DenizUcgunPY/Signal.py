@@ -35,14 +35,21 @@ class Signal:
         self.information    = information
         self.type           = type
         self.isContinous    = isContinous
+        self.signal = self.encode()
 
     def encode(self):
-        pass
+        signal = []
+        for letter in self.information:
+            signal += self.encondeLetter(letter)
+
+        print("Signal: ",signal)
+
+        
 
     def encondeLetter(self,letter): # Z
 
         number = self.letter2number[letter.upper()]  # 24
-        print(f"Number: {number}")
+        # print(f"Number: {number}")
         bits = []  # 0 0 0 0 0
         addition = 0  # 21
 
@@ -54,20 +61,20 @@ class Signal:
                 else:
                     addition += 0
 
-            print(f"i: {i} \ addition: {addition}")
+            # print(f"i: {i} \ addition: {addition}")
 
             if number <= (addition + self.additionList[i]):  #  24 <= 21 + 2
                 bits.append(1)
             else:
                 bits.append(0)
 
-        print(bits)
+        # print(bits)
+        return bits
         
 
 
 # MAIN
 signal1 = Signal("Emin","Bits",False)
 
-signal1.encondeLetter("C")
         
         
