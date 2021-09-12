@@ -88,7 +88,7 @@ class Signal:
 
 
 # MAIN
-signal1 = Signal("Emin","Bits",False)
+signal1 = Signal("Engin","Bits",False)
 
 signal1.printSignal()
 signal1.showSignal()
