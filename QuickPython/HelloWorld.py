@@ -1,5 +1,2 @@
 
-
-print("Hello Başak!")
-
-
+print("Hello Wold!")
