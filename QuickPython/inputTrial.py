@@ -1,6 +1,6 @@
 import sys
 
-print('Bu Program calisiyor!')
+print('Bu \'Program\' calisiyor!')
 
 # for index in range(len(sys.argv)):
 
@@ -12,12 +12,23 @@ print('Bu Program calisiyor!')
 
 # print("Emin","Basak","Deniz","Muart","Nihan",sep="\n")
 
-isimler = ["Emin","Basak","Deniz"]
+# isimler = ["Emin","Basak","Deniz"]
 
-for isim in isimler:
-    print(isim)
+# for isim in isimler:
+#     print(isim)
 
-for i in range(len(isimler)):
-    print(isimler[i])
+# for i in range(len(isimler)):
+#     print(isimler[i])
 
 
+# abcde /
+# ag    /
+
+
+
+def F2C(Fah):
+    C = (Fah - 32) * 5/9
+    print(f"{Fah} F = {C} C")
+
+
+F2C(86)
