@@ -33,7 +33,25 @@
 
 #################
 
+place = ["Taşdelen","Çekmeköy","Üsküdar","Kadıköy"]
+rent  = [1300,1500,1800,2000]
+monthlyContRate = 0.10
+friendCount = 3
+monthlyCont = []
+unitCost = []
 
+## Calculate aidat
+for r in rent:
+    x = r*monthlyContRate
+    monthlyCont.append(x) # %10 of rent is monthly contribution
+
+for i in range(len(place)):
+    cost = (rent[i]+monthlyCont[i])/friendCount
+    unitCost.append(cost)
+
+for i in range(len(place)):
+    content = f"{place[i]}: {unitCost[i]}"
+    print(content)
 
 #################
 
