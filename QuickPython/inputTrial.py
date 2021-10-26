@@ -26,9 +26,18 @@ print('Bu \'Program\' calisiyor!')
 
 
 
-def F2C(Fah):
-    C = (Fah - 32) * 5/9
-    print(f"{Fah} F = {C} C")
+# def F2C(Fah):
+#     C = (Fah - 32) * 5/9
+#     print(f"{Fah} F = {C} C")
 
 
-F2C(86)
+# F2C(86)
+
+basariliMi = False
+
+if basariliMi:
+    print("Basarili Ogrenci")
+else: 
+    print("Basarisiz ogrenci")
+
+
