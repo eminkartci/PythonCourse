@@ -28,10 +28,10 @@
 
 for satir in range(4): # [0 1 2 3]
     # space
-    for space in range(satir): # [0]
+    for space in range(satir): # []
         print(" ",end="")
     # sayi
-    for sayi in range(4): # [0 1 2 3]
+    for sayi in range(4):
         print(satir+1,end="")
 
     print()
